@@ -11,6 +11,9 @@
       />
       <button @click="addTask">Add</button>
     </div>
+    <div class="tasks">
+      {{ $store.state.tasks }}
+    </div>
   </main>
 </template>
 
@@ -19,5 +22,18 @@ import Vue from "vue";
 
 export default Vue.extend({
   name: "IndexPage",
+  data() {
+    return {
+      newTask: "",
+    };
+  },
+  methods: {
+    addTask() {
+      if (this.newTask) {
+        this.$store.commit("ADD_TASK", this.newTask);
+        this.newTask = "";
+      }
+    },
+  },
 });
 </script>
