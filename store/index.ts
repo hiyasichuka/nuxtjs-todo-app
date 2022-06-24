@@ -1,4 +1,4 @@
-export const state = () => ({ task: [] });
+export const state = () => ({ tasks: [] });
 
 export const mutations = {
   ADD_TASK(state: any, task: any) {
